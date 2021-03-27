@@ -1,2 +1,1 @@
-# react-kanban
-Simple React Kanban
+# React Kanban
