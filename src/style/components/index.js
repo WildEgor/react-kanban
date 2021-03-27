@@ -25,7 +25,13 @@ const useStyles = makeStyles(theme => ({
     app: {
         height: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+    },
+    appContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '30px 30px',
+        backgroundColor: theme.palette.secondary.main,
     },
     mainSection: {
         backgroundColor: theme.palette.secondary.main,

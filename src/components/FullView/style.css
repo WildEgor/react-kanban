@@ -3,7 +3,7 @@
     border-radius: 5px;
     margin: 21px 25px;
     height: 100%;
-    padding: 22px 0 0 28px;
+    padding: 0px 0 0 12px;
   }
   .fullViewTitle {
     font-size: 24px;
@@ -18,8 +18,8 @@
   .close {
     position: absolute;
     right: 51px;
-    top: 93px;
-    width: 32px;
+    top: 126px;
+    width: 47px;
     height: 32px;
   }
   

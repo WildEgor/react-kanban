@@ -7,6 +7,7 @@ import Main from 'Components/Main';
 import Spinner from 'Components/Spinner';
 import FullView from 'Components/FullView';
 import Footer from 'Components/Footer';
+import Container from '@material-ui/core/Container';
 
 const App = () => {
   const classes = useStyles()
@@ -27,7 +28,7 @@ const App = () => {
         <Switch>
           <Route
             path="/"
-            children={<Main data={data} updateData={updateData}/>}
+            children={<div className={classes.appContainer}><Main data={data} updateData={updateData}/></div>}
             exact
           />
           <Route
@@ -36,7 +37,7 @@ const App = () => {
               match: {
                 params: { id },
               },
-            }) => <FullView id={id} data={data} updateData={updateData} />}
+            }) => <div className={classes.appContainer}><FullView id={id} data={data} updateData={updateData} /></div>}
           />
         </Switch>
         <Footer data={data} />

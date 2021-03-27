@@ -80,6 +80,12 @@ const FullView = ({ id, data, updateData }) => {
         editOnViewClick={true}
         cancelOnUnfocus
       />
+      <div>
+        <h4>Created at: </h4>
+        <p>{issue.createdAt}</p>
+        <h4>Edited at: </h4>
+        <p>{issue.editedAt}</p>
+      </div>
     </div>
   );
 };

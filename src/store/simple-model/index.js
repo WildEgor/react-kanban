@@ -25,6 +25,10 @@ const simpleModel = {
         const data = state.data
         console.log(payload);
 
+        const timeElapsed = Date.now();
+        const today = new Date(timeElapsed);
+        const editedAt = today.toISOString()
+
         if (payload.hasOwnProperty('name') && payload.hasOwnProperty('id')) {
             array = [
                 ...data.map((dataItem) =>
@@ -36,7 +40,9 @@ const simpleModel = {
                           {
                             id: payload.id,
                             name: payload.name,
-                            desc: 'Simple desc'
+                            desc: 'Enter your desc here',
+                            createdAt: editedAt,
+                            editedAt: editedAt
                           },
                         ],
                       }
@@ -70,7 +76,7 @@ const simpleModel = {
                     if (dataItem.issues) {
                         return {
                             ...dataItem,
-                            issues: dataItem.issues.map(issue => issue.id === payload.uid? {...issue, name : payload.name}: issue),
+                            issues: dataItem.issues.map(issue => issue.id === payload.uid? {...issue, name : payload.name, editedAt}: issue),
                         };
                     }
                     return dataItem;
@@ -82,7 +88,7 @@ const simpleModel = {
                     if (dataItem.issues) {
                         return {
                             ...dataItem,
-                            issues: dataItem.issues.map(issue => issue.id === payload.uid? {...issue, desc : payload.desc}: issue),
+                            issues: dataItem.issues.map(issue => issue.id === payload.uid? {...issue, desc : payload.desc, editedAt}: issue),
                         };
                     }
                     return dataItem;
