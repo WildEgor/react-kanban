@@ -1,5 +1,6 @@
 import { thunk, action } from 'easy-peasy';
-import { fetchJson } from 'Utils/data-utils';
+//import { fetchJson } from 'Utils/data-utils';
+import mockData from '../../../static/mockData/mockData.js';
 
 const simpleModel = {
     data: null,
@@ -11,7 +12,8 @@ const simpleModel = {
     fetchInitialState: thunk(async (actions, payload, {getState}) => {
         if (getState().data === null) {
             actions.dataIsLoadingStart();
-            const data = await fetchJson('static/mockData/mockData.json', { params: {}});
+            //const data = await fetchJson('static/mockData/mockData.json', { params: {}});
+            const data = mockData
             if (data) {
                 actions.setInitialState(data)
                 actions.dataIsLoadingSuccess();

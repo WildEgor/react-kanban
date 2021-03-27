@@ -38,7 +38,6 @@ module.exports = {
       Hooks: Path.resolve(__dirname, '../src/hooks/'),
       Components: Path.resolve(__dirname, '../src/components/'),
       Utils: Path.resolve(__dirname, '../src/utils/'),
-      Static: Path.resolve(__dirname, '../src/static/'),
     },
   },
   module: {

@@ -15,6 +15,7 @@ const App = () => {
   const initialState = useStoreActions(actions => actions.simpleData.fetchInitialState);
   const updateData =  useStoreActions(actions => actions.simpleData.updateData);
   const data = useStoreState(state => state.simpleData.data);
+  const isLoading = useStoreState(state => state.simpleData.isLoading);
 
   useEffect(() => {
     initialState()
@@ -23,7 +24,7 @@ const App = () => {
   return (
     <div className={classes.app}>
       <MenuAppBar />
-      {isRehydrated ? 
+      {isRehydrated && !isLoading ? 
       <Fragment>
         <Switch>
           <Route
