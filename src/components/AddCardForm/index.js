@@ -8,30 +8,25 @@ const AddCardForm = ({ onSubmit }) => {
     };
     const handleSubmit = () => {
         if (name) {
-        onSubmit(name);
+          onSubmit(name);
         }
     };
 
     return(
-        <form
-      onSubmit={(e) => {
-        handleSubmit();
-        e.preventDefault();
-      }}
-    >
-      <label className="label">
-        <input
-          className="input"
-          type="text"
-          value={name}
-          onChange={handleChange}
-          onBlur={handleSubmit}
-        />
-      </label>
-      <button className="submit" type="submit">
-        Submit
-      </button>
-    </form>
+      <form onSubmit={(e) => { handleSubmit(); e.preventDefault(); }} >
+        <label className="label">
+          <input
+            className="input"
+            type="text"
+            value={name}
+            onChange={handleChange}
+            onBlur={handleSubmit}
+          />
+        </label>
+        <button className="submit" type="submit">
+          Submit
+        </button>
+      </form>
     )
 }
 

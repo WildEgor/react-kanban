@@ -13,7 +13,7 @@ const Column = ({ title, issues, addBacklogCard, previousIssues, onMove }) => {
 
     const handleSubmit = (name) => {
         if (isBacklog) {
-        addBacklogCard(name);
+          addBacklogCard(name);
         }
         setIsFormOpen(false);
     };

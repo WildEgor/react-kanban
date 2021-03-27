@@ -21,10 +21,81 @@ const simpleModel = {
         }
     }),
     updateData: action((state, payload) => {
-        state.data = payload
+        let array = []
+        const data = state.data
+        console.log(payload);
+
+        if (payload.hasOwnProperty('name') && payload.hasOwnProperty('id')) {
+            array = [
+                ...data.map((dataItem) =>
+                  dataItem.title === "Backlog"
+                    ? {
+                        ...dataItem,
+                        issues: [
+                          ...dataItem.issues,
+                          {
+                            id: payload.id,
+                            name: payload.name,
+                            desc: 'Simple desc'
+                          },
+                        ],
+                      }
+                    : dataItem
+                ),
+            ]
+        } else if (payload.hasOwnProperty('id') && payload.hasOwnProperty('index')) {
+            array = [
+                ...data.map((dataItem, currentIndex) => {
+                    if (currentIndex === payload.index) {
+                    return {
+                        ...dataItem,
+                        issues: [
+                        ...dataItem.issues,
+                        data[payload.index - 1].issues.find((issue) => issue.id === payload.id),
+                        ],
+                    };
+                    }
+                    if (currentIndex === payload.index - 1) {
+                    return {
+                        ...dataItem,
+                        issues: dataItem.issues.filter((issue) => issue.id !== payload.id),
+                    };
+                    }
+                    return dataItem;
+                }),
+            ]
+        } else if (payload.hasOwnProperty('uid') && payload.hasOwnProperty('name')) {
+            array = [
+                ...data.map((dataItem, currentIndex) => {
+                    if (dataItem.issues) {
+                        return {
+                            ...dataItem,
+                            issues: dataItem.issues.map(issue => issue.id === payload.uid? {...issue, name : payload.name}: issue),
+                        };
+                    }
+                    return dataItem;
+                }),
+            ]
+        } else if (payload.hasOwnProperty('uid') && payload.hasOwnProperty('desc')) {
+            array = [
+                ...data.map((dataItem, currentIndex) => {
+                    if (dataItem.issues) {
+                        return {
+                            ...dataItem,
+                            issues: dataItem.issues.map(issue => issue.id === payload.uid? {...issue, desc : payload.desc}: issue),
+                        };
+                    }
+                    return dataItem;
+                }),
+            ]
+        }
+        else {
+            array = [...data]
+        }
+
+        state.data = [...array]
     }),
     dataIsLoadingStart: action((state, payload) => {
-        console.log('Start Load');
         state.isLoading = true
         state.isError = false
     }),

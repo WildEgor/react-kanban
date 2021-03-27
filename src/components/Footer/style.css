@@ -1,10 +1,10 @@
 .footer {
-    color: white;
-    background-color: #0067a3;
+    /* color: white;
+    background-color: #0067a3; */
     width: 100%;
     display: flex;
-    font-size: 18px;
-    padding: 18px 0 18px 20px;
+    /* font-size: 18px;
+    padding: 18px 0 18px 20px; */
   }
   .active_tasks {
     margin-right: 36px;

@@ -36,7 +36,7 @@ const App = () => {
               match: {
                 params: { id },
               },
-            }) => <FullView id={id} data={data} />}
+            }) => <FullView id={id} data={data} updateData={updateData} />}
           />
         </Switch>
         <Footer data={data} />

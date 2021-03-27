@@ -1,3 +1,4 @@
+import React from 'react';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -29,67 +30,7 @@ const useStyles = makeStyles(theme => ({
     mainSection: {
         backgroundColor: theme.palette.secondary.main,
         height: '80vh'
-    }
-    // userIcon: {
-    //     display: 'flex',
-    //     position: 'relative',
-    //     [theme.breakpoints.only('sm')]: {
-    //         padding: '10px 0'
-    //     },
-    //     '& .chevron': {
-    //         marginRight: '6px',
-    //         transition: 'transform 0.25s',
-    //         [theme.breakpoints.only('sm')]: {
-    //             marginLeft: '6px'
-    //         },
-    //         '&.open': {
-    //             transform: 'rotate(180deg)'
-    //         }
-    //     },
-    //     '& .user-button': {
-    //         background: 'none',
-    //         border: 'none',
-    //         outline: 'none',
-    //         cursor: 'pointer',
-    //         padding: '0',
-    //         display: 'flex',
-    //         alignItems: 'center'
-    //     },
-    //     '& .user-menu': {
-    //         backgroundColor: 'white',
-    //         borderRadius: '5px',
-    //         position: 'absolute',
-    //         top: '31px',
-    //         left: '-80px',
-    //         padding: '11px 0 11px 8px',
-    //         width: '134px',
-    //         [theme.breakpoints.only('sm')]: {
-    //             top: '39px',
-    //             left: '-66px'
-    //         },
-    //         '&:before': {
-    //             content: "",
-    //             position: 'absolute',
-    //             width: '0',
-    //             height: '0',
-    //             top: '-5px',
-    //             right: '10px',
-    //             borderStyle: 'solid',
-    //             borderWidth: '0 5px 5px 5px',
-    //             borderColor: 'transparent transparent #ffffff transparent'
-    //         },
-    //         '& li': {
-    //             listStyle: 'none',
-    //             '&:hover': {
-    //                 color: '#0067a3',
-    //                 cursor: 'pointer'
-    //             },
-    //             '&:not(:last-child)': {
-    //                 paddingBottom: '12px'
-    //             }
-    //         }
-    //     },
-    // }
+    },
 }));
 
 const StyledAppBar = withStyles((theme) => ({
