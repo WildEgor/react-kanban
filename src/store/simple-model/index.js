@@ -5,16 +5,24 @@ const simpleModel = {
     data: null,
     isLoading: false,
     isError: false,
-    loadData: thunk(async (actions) => {
-        actions.dataIsLoadingStart();
-        const data = await fetchJson('static/data/data.json', { params: {}});
-        if (data) {
-            console.log(data)
-            actions.dataIsLoadingSuccess();
-        } else {
-            actions.dataIsLoadingFail();
+    setInitialState: action((state, payload) => {
+        state.data = payload;
+    }),
+    fetchInitialState: thunk(async (actions, payload, {getState}) => {
+        if (getState().data === null) {
+            actions.dataIsLoadingStart();
+            const data = await fetchJson('static/mockData/mockData.json', { params: {}});
+            if (data) {
+                actions.setInitialState(data)
+                actions.dataIsLoadingSuccess();
+            } else {
+                actions.dataIsLoadingFail();
+            }
         }
-      }),
+    }),
+    updateData: action((state, payload) => {
+        state.data = payload
+    }),
     dataIsLoadingStart: action((state, payload) => {
         console.log('Start Load');
         state.isLoading = true
