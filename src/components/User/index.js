@@ -11,7 +11,7 @@ const User = (props) => {
 
     return (
         <div className="user">
-            <button
+            <div
                 className="user-button"
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
@@ -21,7 +21,7 @@ const User = (props) => {
                     alt="chevron"
                 />
                 <img src={avatar} className="user-avatar" alt="avatar" />
-            </button>
+            </div>
 
             {isProfileOpen && (
                 <ul className="user-menu">
