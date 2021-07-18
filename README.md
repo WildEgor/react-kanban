@@ -1,5 +1,16 @@
 # React Kanban
 
+<p align="center">
+   <img src="https://github.com/wildegor/react-kanban/blob/main/screenshots/Screenshot_5.png?raw=true" width="350" alt="accessibility text">
+   <img src="https://github.com/wildegor/react-kanban/blob/main/screenshots/Screenshot_6.png?raw=true" width="350" alt="accessibility text">
+   <img src="https://github.com/wildegor/react-kanban/blob/main/screenshots/Screenshot_7.png?raw=true" width="350" alt="accessibility text">
+   <img src="https://github.com/wildegor/react-kanban/blob/main/screenshots/Screenshot_8.png?raw=true" width="350" alt="accessibility text">
+   <img src="https://github.com/wildegor/react-kanban/blob/main/screenshots/Screenshot_9.png?raw=true" width="350" alt="accessibility text">
+</p>
+<p align="center">
+   <img src="https://github.com/wildegor/react-kanban/blob/main/screenshots/Screenshot_10.png?raw=true" width="350" alt="accessibility text">
+</p>
+
 Что умеет приложение:
 1. Можно добавлять и переносить (в соответствии с ТЗ) задачи;
 2. Каждая задача кликабельна. Открывается отдельная страница с подробной информацией. Можно редактировать задачи (название и описание);
